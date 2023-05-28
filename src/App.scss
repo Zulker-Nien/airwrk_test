@@ -19,17 +19,15 @@
     height: 4vh;
     width: 4vh;
     border: 0.1px solid gray;
-    transition: background-color 0.3s;
     cursor: pointer;
-    border-radius: 50%;
+    border-radius: 4px;
 
     margin: 2vh;
   }
   .active {
     background-color: #00dbde;
-  }
-  button:hover {
-    background-color: #383838;
+    color: #000;
+    font-weight: bolder;
   }
 }
 .actions {
@@ -43,9 +41,74 @@
   }
 }
 .modal {
-  position: absolute;
-  top: 300px;
-  height: 30vh;
-  width: 30vw;
-  background-color: #00dbde;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #00000099;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+
+  .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px #00000026;
+    max-width: 400px;
+
+    h2 {
+      margin-top: 0;
+      margin-bottom: 20px;
+      font-size: 1.2rem;
+    }
+
+    form {
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+
+      input {
+        width: 100%;
+        padding: 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+      }
+    }
+
+    .modal-actions {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 20px;
+
+      button {
+        margin-left: 10px;
+        padding: 8px 16px;
+        border-radius: 4px;
+        background-color: #00dbde;
+        color: #000;
+        font-weight: bolder;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #00dbde;
+        }
+
+        &:first-child {
+          background-color: #ccc;
+          color: #333;
+
+          &:hover {
+            background-color: #aaa;
+          }
+        }
+      }
+    }
+  }
 }
